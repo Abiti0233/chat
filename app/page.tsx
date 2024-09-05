@@ -1,16 +1,17 @@
-import Hero from "@/components/hero";
-import ConnectSupabaseSteps from "@/components/tutorial/connect-supabase-steps";
-import SignUpUserSteps from "@/components/tutorial/sign-up-user-steps";
-import { hasEnvVars } from "@/utils/supabase/check-env-vars";
+import RoomLink from '@/components/roomLink'
 
 export default async function Index() {
+
   return (
-    <>
-      <Hero />
-      <main className="flex-1 flex flex-col gap-6 px-4">
-        <h2 className="font-medium text-xl mb-4">Next steps</h2>
-        {hasEnvVars ? <SignUpUserSteps /> : <ConnectSupabaseSteps />}
-      </main>
-    </>
-  );
+    <div className="flex-1 w-full flex flex-col items-center">
+      <h1 className="text-3xl font-bold pt-6 pb-10">リアルタイムチャットルーム</h1>
+      <ul>
+        <RoomLink channelName='Room1' roomName='ルーム1'></RoomLink>
+        <RoomLink channelName='Room2' roomName='ルーム2'></RoomLink>
+        <RoomLink channelName='Room3' roomName='ルーム3'></RoomLink>
+        <RoomLink channelName='Room4' roomName='ルーム4'></RoomLink>
+        <RoomLink channelName='Room5' roomName='ルーム5'></RoomLink>
+      </ul>
+    </div>
+  )
 }
